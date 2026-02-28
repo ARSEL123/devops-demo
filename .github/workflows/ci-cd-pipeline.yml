@@ -6,6 +6,9 @@ on:
   pull_request:
     branches: [main]
 
+env:
+  REPO_OWNER: arsel123
+
 jobs:
 
   test:
@@ -49,7 +52,7 @@ jobs:
         with:
           context: .
           push: true
-          tags: ghcr.io/${{ github.repository_owner }}/devops-demo:latest
+          tags: ghcr.io/${{ env.REPO_OWNER }}/devops-demo:latest
 
   deploy:
     name: Deploy
